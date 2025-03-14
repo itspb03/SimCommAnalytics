@@ -118,14 +118,23 @@ The script:
 ### **2. Generating Visualizations**  
 Run `data_plots.ipynb` to visualize sentiment classification and word frequency histograms.  
 
-#### **Run the Script**  
-```bash
-python data_plots.py
-```
+#### **Usage:**  
+- This script reads the generated CSV file and produces:  
+  - A **histogram** of word counts per 5-second bucket (colored by sentiment).  
+  - A **pie chart** showing the distribution of sentiment.  
 
-#### **Expected Outputs:**  
-- **Histogram**: Displays word count per 5-second time interval, color-coded by sentiment.  
-- **Pie Chart**: Shows the distribution of sentiments in the transcription.  
+#### **Run the script using:**  
+```bash
+jupyter notebook
+```
+- Open **`data_plots.ipynb`** and execute the cells.  
+
+#### **How It Works:**  
+1. Reads the CSV files from the `output/` directory.  
+2. Extracts **timestamps, transcriptions, and sentiment classifications**.  
+3. Generates:  
+   - **Histogram:** Counts the words per 5-second window and colors bars based on sentiment.  
+   - **Pie Chart:** Displays sentiment proportions.  
 
 ---
 
@@ -193,6 +202,21 @@ Below is an example of the output generated from a sample video processed throug
 - Enhance UI for better visualization.
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
