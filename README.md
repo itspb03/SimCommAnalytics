@@ -144,8 +144,6 @@ Each component was tested using sample video files and URLs.
 - Non-English speech might produce incorrect transcriptions.
 - Poor audio quality affects transcription accuracy.
 
-Here’s the updated README with an **"Output of Sample Data"** section after **Testing** where you can add a video link and images of the generated plots.  
-
 ---
 
 ## **Output of Sample Data**  
