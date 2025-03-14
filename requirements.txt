@@ -1,0 +1,10 @@
+torch
+transformers
+whisper
+yt-dlp
+pandas
+requests
+beautifulsoup4
+pydub
+matplotlib
+numpy
