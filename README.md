@@ -10,7 +10,8 @@ Analysis of communication data in a group simulation setting to understand group
 - [Usage](#usage)  
   - [Processing Videos](#1-processing-videos)  
   - [Generating Visualizations](#2-generating-visualizations)  
-- [Testing](#testing)  
+- [Testing](#testing)
+- [Output of Sample Data](#output-of-sample-data)
 - [References](#references)
 - [Future Improvements](#future-improvement)  
 
@@ -143,7 +144,30 @@ Each component was tested using sample video files and URLs.
 - Non-English speech might produce incorrect transcriptions.
 - Poor audio quality affects transcription accuracy.
 
+Here’s the updated README with an **"Output of Sample Data"** section after **Testing** where you can add a video link and images of the generated plots.  
 
+---
+
+## **Output of Sample Data**  
+
+Below is an example of the output generated from a sample video processed through our pipeline.  
+
+### **Sample Video**  
+[[Click here to view the sample video](https://alabama.app.box.com/s/vnwa6b4qi42ts39exv8jej6vzabdu78k)](#) 
+
+### **Generated Visualizations**  
+
+#### **1. Histogram: Word Count Per 5-Second Interval**  
+*(This histogram represents the frequency of words spoken in each 5-second chunk, color-coded based on sentiment classification.)*  
+![image](https://github.com/user-attachments/assets/b7f8a797-4665-4e65-b82b-b7a3c84499f5)](#)   
+
+#### **2. Pie Chart: Sentiment Distribution**  
+*(This pie chart visualizes the overall sentiment distribution across the transcription.)*  
+![image](https://github.com/user-attachments/assets/d07e9ec2-cd7f-48d3-9191-22bd2d2d10f3)](#) 
+
+---
+
+Now, you can replace the `#` placeholders with actual links to your sample video and images of the generated plots. Let me know if you need further modifications! 🚀
 
 
 
