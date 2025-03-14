@@ -96,15 +96,15 @@ main([
 main("videos/")
 ```
 
-
-
-```
 The script:
 1. Downloads videos from the provided source (if a URL).
 2. Extracts audio and segments it into ≤5s chunks.
 3. Transcribes each chunk using OpenAI’s Whisper model.
 4. Performs sentiment analysis using the **cardiffnlp/twitter-roberta-base-sentiment** model.
 5. Saves results in CSV format in the `output/` folder.
+
+
+
 
 #### **Example CSV Output Format**
 | Timestamp | Transcription | Sentiment |
@@ -113,6 +113,7 @@ The script:
 | 5.00      | This is amazing. | Positive |
 
 ---
+
 ### **2. Generating Visualizations**  
 Run `data_plots.ipynb` to visualize sentiment classification and word frequency histograms.  
 
