@@ -52,7 +52,7 @@ pip install torch transformers whisper yt-dlp pandas requests bs4 pydub matplotl
 
 ### **1. Clone the Repository**  
 ```bash
-git clone https://github.com/your_username/your_project.git
+git clone https://github.com/itspb03/SimCommAnalytics.git
 cd your_project
 ```
 
