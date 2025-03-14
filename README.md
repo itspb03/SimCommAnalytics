@@ -11,7 +11,8 @@ Analysis of communication data in a group simulation setting to understand group
   - [Processing Videos](#1-processing-videos)  
   - [Generating Visualizations](#2-generating-visualizations)  
 - [Testing](#testing)  
-- [References](#references)  
+- [References](#references)
+- [Future Improvements](#future-improvement)  
 
 ---
 
@@ -95,8 +96,23 @@ main([
 main("videos/")
 ```
 
----
 
+
+```
+The script:
+1. Downloads videos from the provided source (if a URL).
+2. Extracts audio and segments it into ≤5s chunks.
+3. Transcribes each chunk using OpenAI’s Whisper model.
+4. Performs sentiment analysis using the **cardiffnlp/twitter-roberta-base-sentiment** model.
+5. Saves results in CSV format in the `output/` folder.
+
+#### **Example CSV Output Format**
+| Timestamp | Transcription | Sentiment |
+|-----------|-------------|-----------|
+| 0.00      | Hello world! | Neutral   |
+| 5.00      | This is amazing. | Positive |
+
+---
 ### **2. Generating Visualizations**  
 Run `data_plots.ipynb` to visualize sentiment classification and word frequency histograms.  
 
@@ -111,23 +127,24 @@ python data_plots.py
 
 ---
 
-## **Testing**  
+## **Testing**
+Each component was tested using sample video files and URLs.
 
-The code was tested using the following methods:  
+### **Unit Tests**
+1. **Video Downloading** – Verified using multiple video URLs.
+2. **Audio Extraction & Segmentation** – Tested on different formats (`mp4`, `mkv`, `webm`).
+3. **Transcription Accuracy** – Compared Whisper output with expected transcriptions.
+4. **Sentiment Analysis** – Manually verified sentiment labels for correctness.
+5. **Visualization Outputs** – Checked histograms and pie charts for proper sentiment distribution.
 
-✅ **Manual Testing**  
-- Processed different video files and URLs to verify that the pipeline works as expected.  
+### **Edge Cases**
+- Empty transcriptions default to `Neutral`.
+- Non-English speech might produce incorrect transcriptions.
+- Poor audio quality affects transcription accuracy.
 
-✅ **Edge Case Handling**  
-- Verified behavior for **silent audio chunks**.  
-- Checked **sentiment analysis results** for empty transcriptions.  
 
-✅ **Output Verification**  
-- Manually reviewed transcriptions in **CSV files**.  
-- Checked **sentiment classifications** for accuracy.  
-- Validated **visualizations** using sample data.  
 
----
+
 
 ## **References**  
 
@@ -145,6 +162,15 @@ The code was tested using the following methods:
 ### **4. Pydub for Audio Processing**  
 - **Documentation**: [Pydub](https://github.com/jiaaro/pydub)  
 
+
+
+## **Future Improvements**
+- Add support for multiple languages.
+- Improve segmentation logic for more accurate timestamps.
+- Enhance UI for better visualization.
+
 ---
 
-This should be **directly copy-pastable** into your `README.md` file. Let me know if you need any modifications! 🚀
+
+
+
