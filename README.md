@@ -118,8 +118,8 @@ The script:
 ### **2. Generating Visualizations**  
 Run `data_plots.ipynb` to visualize sentiment classification and word frequency histograms.  
 
-#### **Usage:**  
-- This script reads the generated CSV file and produces:  
+ 
+### **This script reads the generated CSV file and produces:**  
   - A **histogram** of word counts per 5-second bucket (colored by sentiment).  
   - A **pie chart** showing the distribution of sentiment.  
 
