@@ -192,7 +192,7 @@ Each component was tested using sample video files and URLs.
 Below is an example of the output generated from a sample video processed through our pipeline.  
 
 ### **Sample Video**  
-[[Click here to view the sample video](https://alabama.app.box.com/s/vnwa6b4qi42ts39exv8jej6vzabdu78k)]
+[Click here to view the sample video](https://alabama.app.box.com/s/vnwa6b4qi42ts39exv8jej6vzabdu78k)
 
 ### **Generated Visualizations**  
 
