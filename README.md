@@ -6,7 +6,7 @@ Analysis of communication data in a group simulation setting to understand group
 ## **Table of Contents**  
 - [Overview](#overview)  
 - [Requirements](#requirements)  
-- [Installation & Setup](#installation--setup)  
+- [Setup and Usage Instructions](#setup-and-usage-instructions)  
 - [Usage](#usage)  
   - [Processing Videos](#1-processing-videos)  
   - [Generating Visualizations](#2-generating-visualizations)  
@@ -44,7 +44,7 @@ pip install torch transformers whisper yt-dlp pandas requests bs4 pydub matplotl
 |---------|---------|
 | `torch` | Used for running deep learning models, including sentiment analysis. |
 | `transformers` | Provides the pre-trained RoBERTa model for sentiment analysis. |
-| `whisper` | Utilized for automatic speech recognition (ASR). |
+| `openai-whisper` | Utilized for automatic speech recognition (ASR). |
 | `yt-dlp` | Downloads video files from a given URL. |
 | `pandas` | Handles tabular data and stores transcriptions in CSV format. |
 | `requests` | Fetches HTML pages to extract video links. |
@@ -52,65 +52,82 @@ pip install torch transformers whisper yt-dlp pandas requests bs4 pydub matplotl
 | `pydub` | Handles audio file conversion and segmentation. |
 | `matplotlib` | Generates plots for visualization. |
 | `numpy` | Supports numerical computations for histogram binning. |
+| `streamlit` | Provides the interactive web interface for user interaction. |
+
 
 ---
 
-## **Installation & Setup**  
 
-### **1. Clone the Repository**  
+
+## **Setup and Usage Instructions**
+
+Follow the steps below to run the Communication Analysis Tool:
+
+### **1. Clone the Repository**
 ```bash
 git clone https://github.com/itspb03/SimCommAnalytics.git
 cd SimCommAnalytics
 ```
 
-### **2. Install Dependencies**  
+### **2. Install Dependencies**
+Ensure Python 3.8+ is installed, then install all required libraries using:
 ```bash
 pip install -r requirements.txt
 ```
 
-### **3. Set Up Required Directories**  
-The scripts automatically create the necessary directories (`videos/`, `audio/`, `output/`). Ensure that:  
-- **Video files** are downloaded or placed in the `videos/` folder.  
-- The **`output/` folder** stores processed CSV results.  
+> **Note:** If Whisper or PyTorch installation fails, refer to [Whisper’s installation guide](https://github.com/openai/whisper) or [PyTorch’s official site](https://pytorch.org/get-started/locally/).
 
 ---
 
-## **Usage**  
-
-### **1. Processing Videos**  
-Run `datahandling.py` to process a video file or URL.  
-
-#### **Run the Script**  
+### **3. Run the Application**
+Start the Streamlit interface using:
 ```bash
-python datahandling.py
+streamlit run app.py
 ```
 
-#### **Example: Processing a Single Video**  
-```python
-main("path/to/local/video.mp4")
-```
+---
 
-#### **Example: Processing a List of URLs**  
-```python
-main([
-    "https://example.com/video1.mp4",
-    "https://example.com/video2.mp4"
-])
-```
+### **4. Using the Tool**
+Once the app launches in your browser:
 
-#### **Example: Processing All Videos in a Folder**  
-```python
-main("videos/")
-```
 
-The script:
+- **Select the uploading method:**
+  ![Screenshot 2025-04-06 211738](https://github.com/user-attachments/assets/7d75287e-ab49-4fc1-932b-6600eab4b4be)
+
+- **Upload a video file** or **provide a YouTube link** (single video or playlist).
+  
+- **Choose chunking method**:
+  - `Fixed`: Segments audio into equal 5-second parts.  
+  - `Silence-based`: Detects pauses to segment naturally.
+  ![Screenshot 2025-04-06 213412](https://github.com/user-attachments/assets/087f5458-da9e-4500-a650-361e0b6f4d28)
+
+
+- **Download CSV** with transcriptions and sentiment scores.
+- **Visualize**:
+   ![image](https://github.com/user-attachments/assets/df53633d-807f-4e91-9622-ea0d77b195b2)
+
+  - Histogram of word count per chunk with sentiment color-coding.
+  - Pie chart showing overall sentiment distribution.
+  - Line plot of sentiment trend over time.
+
+---
+
+### **5. Output**
+  ![image](https://github.com/user-attachments/assets/22fc22e5-0d05-4e52-8874-459ac2399837)
+
+- Processed data is saved as a `.csv` file.
+- Plots are displayed directly in the Streamlit interface.
+- Temporary audio chunks are auto-deleted after processing.
+
+---
+
+
+The Application:
 1. Downloads videos from the provided source (if a URL).
 2. Extracts audio and segments it into ≤5s chunks.
 3. Transcribes each chunk using OpenAI’s Whisper model.
 4. Performs sentiment analysis using the **cardiffnlp/twitter-roberta-base-sentiment** model.
 5. Saves results in CSV format in the `output/` folder.
-
-
 
 
 #### **Example CSV Output Format**
@@ -121,26 +138,8 @@ The script:
 
 ---
 
-### **2. Generating Visualizations**  
-Run `data_plots.ipynb` to visualize sentiment classification and word frequency histograms.  
 
- 
-### **This script reads the generated CSV file and produces:**  
-  - A **histogram** of word counts per 5-second bucket (colored by sentiment).  
-  - A **pie chart** showing the distribution of sentiment.  
-
-#### **Run the script using:**  
-```bash
-jupyter notebook
-```
-- Open **`data_plots.ipynb`** and execute the cells.  
-
-#### **How It Works:**  
-1. Reads the CSV files from the `output/` directory.  
-2. Extracts **timestamps, transcriptions, and sentiment classifications**.  
-3. Generates:  
-   - **Histogram:** Counts the words per 5-second window and colors bars based on sentiment.  
-   - **Pie Chart:** Displays sentiment proportions.  
+  
 
 ---
 
