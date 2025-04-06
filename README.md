@@ -18,12 +18,18 @@ Analysis of communication data in a group simulation setting to understand group
 ---
 
 ## **Overview**  
-This project processes video files, extracts audio, segments it into **5-second chunks**, transcribes speech using **Whisper**, and performs **sentiment analysis** using a transformer model. The results are saved as CSV files and can be visualized using histograms and pie charts.
+This project processes video files, extracts audio, segments it into **fixed-length** or **silence-based chunks**, transcribes speech using **Whisper**, and performs **sentiment analysis** using a transformer model. The results are saved as CSV files and can be visualized using histograms and pie charts.
 
-The project consists of two main scripts:  
+The entire functionality is encapsulated in a single main script:
+ **`app.py`** –This script integrates all components of the pipeline and is divided into clearly labeled sections through comments:
+ 
+  -**Data Handling** – Manages video/audio input, chunking, transcription, and sentiment analysis.
 
-- **`datahandling.py`** – Handles video downloading, audio extraction, transcription, and sentiment analysis.  
-- **`data_plots.ipynb`** – Reads the processed CSV files and generates visualizations.  
+  -**Data Plots** – Generates sentiment-based histograms, pie charts, and line plots.
+ 
+  -**Streamlit UI** – Provides an interactive web interface for uploading videos, selecting analysis options, and visualizing results.
+
+
 
 ---
 
