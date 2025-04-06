@@ -204,7 +204,7 @@ Below is an example of the output generated from a sample video processed throug
 *(This pie chart visualizes the overall sentiment distribution across the transcription.)*  
 ![image](https://github.com/user-attachments/assets/d07e9ec2-cd7f-48d3-9191-22bd2d2d10f3) 
 
-### **3. Line Plot: Sentiment Trend Over Time**
+#### **3. Line Plot: Sentiment Trend Over Time**
 *(This line plot displays the progression of sentiment across the audio timeline. Each point represents the sentiment of a chunk, and a rolling average is applied to smooth out short-term fluctuations and highlight the overall trend in speaker emotion.)*
 ![image](https://github.com/user-attachments/assets/ce3dc49d-825f-43c9-8d70-95400ab96da1)
 
