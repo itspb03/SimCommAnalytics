@@ -20,6 +20,7 @@ This project processes video files, extracts audio, segments it into **fixed-len
 
 The entire functionality is encapsulated in a single main script:
  **`app.py`** 
+ 
  This script integrates all components of the pipeline and is divided into clearly labeled sections through comments:
  
   a) **Data Handling** – Manages video/audio input, chunking, transcription, and sentiment analysis.
