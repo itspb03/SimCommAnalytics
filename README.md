@@ -112,7 +112,7 @@ Once the app launches in your browser:
  **Demo Video :** [Link](https://drive.google.com/file/d/1_hUoyB47qfiCUrbaAiwDTVAWdLBExtHk/view?usp=sharing) 
 
 
-### **5. Output**
+### **5. Output UI**
 
 
   <img src="https://github.com/user-attachments/assets/3f49c872-4334-4599-9d47-26c8338750cf" width="1000"/>
